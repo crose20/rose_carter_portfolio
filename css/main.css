@@ -1,0 +1,667 @@
+/*# sourceMappingURL=main.css.map */
+
+/* -------------------------------------------------- FONT STYLES FOR ALL PAGES -------------------------------------------------- */
+
+/* H1 is to only be used once for the page title which is the first item of text on each page */
+h1 {
+	color: #000000;
+	font-family: futura-pt, Futura, sans-serif;
+	font-size: 30px;
+	line-height: 36px;
+    font-weight: 400;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* H2 is to be used under h1 on portfolio pages */
+h2 {
+    color: #000000;
+	font-family: Futura-pt, Futura, sans-serif;
+	font-size: 20px;
+	line-height: 26px;
+    font-weight: 100;
+    margin: 0px; 
+    padding: 0px;
+}
+
+/* H3 has a grey half highlighted bckgnd & is used as section titles */
+h3 {
+    color: #000000;
+	font-family: futura-pt, Futura, sans-serif;
+	font-size: 17px;
+	line-height: 24px;
+    font-weight: 400;
+    margin: 0px 0px 20px 0px;
+    padding: 0px 5px 0px 5px;
+    background: linear-gradient(
+        #ffffff 0%, 
+        #ffffff 50%, 
+        #F0EFEF 50%, 
+        #F0EFEF 100%
+    );
+    display: inline;
+}
+
+/* H4 has the same styles as h3 but without the grey highlight */
+h4 {
+    color: #000000;
+	font-family: futura-pt, Futura, sans-serif;
+	font-size: 17px;
+	line-height: 24px;
+    font-weight: 400;
+    margin: 10px 0px 5px 0px;
+}
+
+/* H5 is a small text */
+h5 {
+    color: #000000;
+	font-family: futura-pt, Futura, sans-serif;
+	font-size: 13px;
+	line-height: 17px;
+    font-weight: 100;
+    margin: 10px 0px 0px 0px;
+}
+
+p {
+	color: #000000;
+	font-family: futura-pt, Futura, sans-serif;
+	font-size: 15px;
+	line-height: 22px;
+    font-weight: 100;
+    margin: 0px 0px 0px 0px;
+}
+
+.bold {font-weight: 500;}
+
+.white-text {color: #ffffff;}
+
+.center-text {text-align: center;}
+
+.tiny-text {
+    color: #000000;
+	font-family: futura-pt, Futura, sans-serif;
+	font-size: 12px;
+	line-height: 14px;
+    font-weight: 100;
+}
+
+.grey-highlight {
+    padding: 0px 5px 0px 5px;
+    background: linear-gradient(
+        #ffffff 0%, 
+        #ffffff 50%, 
+        #F0EFEF 50%, 
+        #F0EFEF 100%
+    );
+    display: inline;
+}
+
+/* img-overlay-text used on 'About' & 'Contact' pages */
+.img-overlay-text {
+    color: #ffffff;
+	font-family: futura-pt, Futura, sans-serif;
+	font-size: 40px;
+	line-height: 45px;
+    font-weight: 500;
+}
+/* Media queries for font size on img-overlay-text used on 'About' & 'Contact' pages */
+@media screen and (min-width: 570px) {.img-overlay-text {font-size: 60px; line-height: 68px;}}
+
+/* img-overlay-text-index used on 'Index' page */
+.img-overlay-text-index {
+    color: #ffffff;
+	font-family: futura-pt, Futura, sans-serif;
+	font-size: 34px;
+	line-height: 40px;
+    font-weight: 500;
+}
+/* Media queries for font size on img-overlay-text-index used on 'Index' page */
+@media screen and (min-width: 515px) {.img-overlay-text-index {font-size: 50px; line-height: 55px;}}
+@media screen and (min-width: 630px) {.img-overlay-text-index {font-size: 30px; line-height: 35px;}}
+@media screen and (min-width: 650px) {.img-overlay-text-index {font-size: 40px; line-height: 45px;}}
+@media screen and (min-width: 750px) {.img-overlay-text-index {font-size: 49px; line-height: 55px;}}
+@media screen and (min-width: 890px) {.img-overlay-text-index {font-size: 60px; line-height: 68px;}}
+@media screen and (min-width: 1000px) {.img-overlay-text-index {font-size: 68px; line-height: 73px;}}
+@media screen and (min-width: 1187px) {.img-overlay-text-index {font-size: 78px; line-height: 95px;}}
+
+/* ------------------------------------------------ NAV ------------------------------------------------ */
+
+.curtain-menu {
+    z-index: 2;
+    position: fixed;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+}
+  
+.curtain-menu-wrapper {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    /* Centers text horizontally on a page */
+    -webkit-justify-content: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+    /* Centers text vertically on a page */
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; 
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    transition-delay: 0.5s;
+    visibility: hidden;
+}
+
+/* Position of text in nav when viewable */
+@media screen and (min-width: 640px) {
+    .curtain-menu-wrapper {
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+}
+
+  
+.curtain-menu-wrapper .curtain-menu-list li {
+    width: 100%;
+    text-align: left;
+    -webkit-justify-content: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    transition: all 0.2s ease-in;
+    
+}
+
+/* --- Nav Links --- */
+/* Main Links */
+.curtain-menu-wrapper .curtain-menu-list li a {
+    color: #ffffff;
+    padding: 0px 0px 0px 0px;
+    margin-left: 20px; 
+    font-family: futura-pt, Futura, sans-serif;
+	font-size: 15px;
+	line-height: 30px;
+    font-weight: 100;
+}
+.curtain-menu-wrapper .curtain-menu-list li a:hover {
+    color: #893737;
+    transition-duration: 1s;
+}
+.curtain-menu-wrapper .curtain-menu-list li a:not(hover) {
+    color: #ffffff;
+    transition-duration: 1s;
+}
+/* Social Media Links */
+.social-nav-link {
+    float: left;
+    color: #ffffff;
+    padding-left: 10px;
+    text-decoration: underline;
+}
+.social-nav-link:hover {
+    color: #893737;
+    transition-duration: 1s;
+}
+.social-nav-link:not(:hover) {
+    transition-duration: 1s;
+}
+/* Social Media Icons */
+.nav-social-icons {
+    width: 17px;
+    height: 17px;
+    margin: 0px 0px 0px 0px;
+    fill: #ffffff;
+    float: left;
+}
+.nav-social-icons:hover {
+    fill: #893737;
+    transition-duration: 1s;
+}
+.nav-social-icons:not(:hover) {
+    transition-duration: 1s;
+}
+
+.curtain-menu .curtain {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    transition: -webkit-flex 0.45s;
+    transition: flex 0.45s;
+    transition: flex 0.45s, -webkit-flex 0.45s, -ms-flex 0.45s;
+}
+  
+.curtain-menu .curtain:nth-child(2) {
+    -webkit-flex: 1 0 100%;
+    -ms-flex: 1 0 100%;
+    flex: 1 0 100%;
+    background: transparent;
+}
+  
+/* Background colour of nav once open */
+.curtain-menu .curtain:nth-child(odd) {
+    background: #000000;
+}
+
+/* Positioning of '+' menu on page */
+.curtain-menu-button {
+    position: fixed;
+    top: 42px;
+    right: 30px;
+    z-index: 5;
+}
+
+/* Area that makes hamburger menu clickable */
+.curtain-menu-button-toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 5000px;
+    background: #ffffff;
+    position: relative;
+    cursor: pointer;
+}
+  
+.curtain-menu-button-toggle div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 3px;
+    background: #000000;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    transition-delay: 0.5s;
+}
+
+/* Lines that make up the '+' of the nav */
+.curtain-menu-button-toggle .bar1 {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  }
+.curtain-menu-button-toggle .bar2 {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-180deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(-180deg);
+        transform: translateX(-50%) translateY(-50%) rotate(-180deg);
+}
+
+/* Hover state of '+' nav */
+.curtain-menu-button-toggle:hover {
+    background: #000000;
+    transition-duration: 1s;
+}
+.curtain-menu-button-toggle:not(hover) {
+    background: #f0efef;
+    transition-duration: 1s;
+}
+.curtain-menu-button-toggle:hover div {
+    background: #ffffff;
+}
+  
+.curtain-menu-open .curtain:nth-child(2) {
+    -webkit-flex: 0 0 0%;
+    -ms-flex: 0 0 0%;
+    flex: 0 0 0%;
+}
+  
+.curtain-menu-open .curtain-menu-wrapper {
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    visibility: visible;
+    pointer-events: all;
+}
+  
+.curtain-menu-open .curtain-menu-button-toggle .bar1 {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+}
+.curtain-menu-open .curtain-menu-button-toggle .bar2 {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-135deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(-135deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-135deg);
+}
+  
+/* ------------------------------------------------ MAIN LOGO ------------------------------------------------ */
+.main-logo {
+    width: 200px;
+    margin: 15px 0px 15px 0px;
+} 
+/* ------------------------------------------------ COMMON PAGE ELEMENTS ------------------------------------------------ */
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+/* Elements used to create text over images used index, about & contact pages */
+.container /* container holding the image and the text */ {
+    position: relative;
+}
+
+.text-block /* text location relative to image */ {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    margin-right: 20px;
+}
+
+/* Button Classes */
+.button-black {
+    background-color: #000000;
+    color: #ffffff;
+    border: #000000 solid 2px;
+    padding: 5px;
+	font-family: Futura PT, Futura;
+	font-size: 17px;
+	line-height: 24px;
+    font-weight: 400;
+    width: 100%;
+    margin: 0px;
+}
+.button-black:hover {
+    background-color: #f0efef;
+    color: #000000;
+    border: #f0efef solid 2px;
+    padding: 5px;
+    transition-duration: 0.7s;
+}
+.button-black:not(:hover) {
+    background-color: #000000;
+    color: #ffffff;
+    border: #000000 solid 2px;
+    padding: 5px;
+    transition-duration: 0.7s;
+}
+
+/* Arrow Icons to navigate through portfolio pages */
+/* Left Side Arrow */
+.arrow-icon-left {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.arrow-icon-left:hover {
+    margin-left: 5px;
+    margin-right: 15px;
+    transition-duration: 0.7s;
+}
+.arrow-icon-left:not(:hover) {
+    margin-left: 5px;
+    margin-right: 5px;
+    transition-duration: 0.7s;
+}
+
+/* Right Side Arrow */
+.arrow-icon-right {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.arrow-icon-right:hover {
+    margin-left: 15px;
+    margin-right: 5px;
+    transition-duration: 0.7s;
+}
+.arrow-icon-right:not(:hover) {
+    margin-left: 5px;
+    transition-duration: 0.7s;
+}
+
+/* Margin Classes */
+/* created as a work-around for unknown issues elsewhere in the code & to keep things consistent */
+.margin-top {margin-top: 10px;}
+.margin-top-5 {margin-top: 5px;}
+.margin-top-20 {margin-top: 20px;}
+.margin-top-50 {margin-top: 50px;}
+.margin-top-h1 {margin-top: 20px;}
+.margin-bottom {margin-bottom: 10px;}
+.margin-bottom-5 {margin-bottom: 5px;}
+.margin-bottom-15 {margin-bottom: 15px;}
+@media screen and (min-width: 1028px) {.margin-top-h1 {margin-top: 0px;}}
+
+/* Section Divider Lines*/
+/* Used on 'About' page to break up content */
+.section-divider-line {
+    background-color: #000000;
+    height: 2px;
+    width: 100%;
+    margin: 15px 0px 15px 0px;
+}
+/* Used on portfolio pages to break up description and images */
+.section-divider-line-thick {
+    background-color: #000000;
+    height: 6px;
+    width: 100%;
+    margin: 15px 0px 50px 0px;
+}
+/* Used on 'About' & 'Contact' pages at small directly below images */
+.top-divider-line-thick {
+    background-color: #000000;
+    height: 6px;
+    width: 100%;
+    margin: 15px 0px 20px 0px;
+}
+
+/* -------------------------------------------------- F&LS PAGE -------------------------------------------------- */
+
+@media screen and (min-width: 820px) 
+{
+    .fls-img-half {width: 49.3%;}
+    .fls-margin-right {margin-right: 10px;}
+    .fls-float-right {float: right;}
+}
+
+/* -------------------------------------------------- DISPOSABLE PAGE -------------------------------------------------- */
+
+.disposable-images {display: none;}
+
+.lightbox {
+position: relative;
+}
+
+/* used to center img-indicators on bottom middle of photos */
+.position-bottom-middle{
+    position: absolute;
+    left:50%;
+    bottom:0;
+    transform:translate(-50%,0%);
+    -ms-transform:translate(-50%,0%)
+}
+
+/* Holds all images in lightbox */
+.disposable-img-container{
+    position:relative;
+    margin: 0 auto;
+}
+
+/* right & left arrows on lightbox */
+.lightbox-arrow {
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin: 0px 20px 0px 20px;
+    width: 20px;
+    height: 20px;
+    padding-top: 5px;
+}
+
+@media screen and (min-width: 640px) {
+    .lightbox-arrow {
+        margin: 0px 30px 0px 30px;
+    }
+}
+
+.lightbox-arrow:hover {
+    cursor: pointer;
+}
+ 
+/* img indicator rectangle at bottom of lightbox */
+.img-indicator {
+    color: #f0efef;
+    display: inline-block;
+    margin: 0px 1px 3px 1px; 
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    text-align: center; 
+    background-color:transparent!important;
+    border: 1px solid#f0efef!important;
+    opacity: 0.9;
+}
+
+.img-indicator:hover{
+    background-color: #f0efef!important;
+    transition-duration: 0.7s;
+}
+
+.img-indicator-selected-color {
+    color:#f0efef!important;
+    background-color: #f0efef!important;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+/* -------------------------------------------------- ABOUT PAGE -------------------------------------------------- */
+
+/* Scrollable window for about information displayed beside image at large*/
+.overflow-scroll {
+    overflow: auto;
+}
+/* media queries to make scrollable text box the same size as image when scalling window*/
+@media screen and (min-width:1024px) {.overflow-scroll {height: 437px;}}
+@media screen and (min-width:1100px) {.overflow-scroll {height: 473px;}}
+@media screen and (min-width:1150px) {.overflow-scroll {height: 498px;}}
+@media screen and (min-width:1160px) {.overflow-scroll {height: 502px;}}
+@media screen and (min-width:1170px) {.overflow-scroll {height: 505px;}}
+@media screen and (min-width:1185px) {.overflow-scroll {height: 518px;}}
+
+.overflow-scroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+.overflow-scroll::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    background-color: #f0efef;
+    box-shadow: 0 0 1px rgba(255,255,255,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+/* -------------------------------------------------- CONTACT PAGE -------------------------------------------------- */
+
+
+input[type=text] {
+    border: 2px solid #000000;
+}
+
+input[type=text]:focus {
+    border: 2px solid #000000;
+}
+
+input[type=email] {
+    border: 2px solid #000000;
+}
+
+input[type=email]:focus {
+    border: 2px solid #000000;
+}
+
+#message {
+    border: 2px solid #000000;
+}
+
+label {
+    color: #000000;
+	font-family: Futura PT, Futura;
+	font-size: 17px;
+	line-height: 24px;
+    font-weight: 400;
+    margin: 10px 0px 5px 0px;
+}
+
+/* -------------------------------------------------- FOOTER -------------------------------------------------- */
+.footer
+{
+	background-color: #000000;
+    margin-top: 27px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin: 30px 0px 0px 0px;
+} 
+
+/* Social Icon Classes */
+.social-icons-container {
+    width: 100%
+}
+
+.social-icons {
+    width: 17px;
+    height: 17px;
+    margin: 20px 10px 15px 10px;
+    fill: #ffffff;
+}
+
+.social-icons:hover {
+    fill: #893737;
+    transition-duration: 1s;
+}
+
+.social-icons:not(:hover) {
+    transition-duration: 1s;
+}
+
+.footer-text {
+    padding-top: 30px;
+}
+
+.tiny-footer-text {
+    color: #ffffff;
+	font-family: Futura PT, Futura;
+	font-size: 12px;
+	line-height: 14px;
+    font-weight: 100;
+    padding: 0px 0px 25px 0px;
+}
